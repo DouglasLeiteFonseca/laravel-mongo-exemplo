@@ -15,7 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('pessoa', 'PessoaController');
 Route::get('mongo', function(Request $request) {
+   
+
     $collection = Mongo::get()->teste->usuario;
+
     return $collection->find()->toArray();
 });

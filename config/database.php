@@ -80,7 +80,14 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
         ],
-
+        'mongodb' => [
+            'driver' => 'mongo',
+            'host' => env('DB_HOST', 'localhost'),
+            'port' => env('DB_PORT', 27017),
+            'database' => env('DB_DATABASE', 'teste'),
+        ],
+    
+        'default' => env('DB_CONNECTION', 'mongodb'),
     ],
 
     /*

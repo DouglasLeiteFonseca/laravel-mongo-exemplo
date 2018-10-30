@@ -16,3 +16,12 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::resource('pessoa', 'PessoaController');
+Route::get('mongo', function(Request $request) {
+   
+
+    $collection = Mongo::get()->teste->pessoa;
+
+    return $collection->find()->toArray();
+});
